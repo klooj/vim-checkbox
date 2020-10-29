@@ -7,7 +7,7 @@
 "                   terms of the Artistic License 2.0.
 " ****************************************************************************
 " Installation: Copy this script into your plugin folder.
-" Usage: Press "<leader>tt" to toggle the (first) checkbox on the current
+" Usage: Press "<leader>x" to toggle the (first) checkbox on the current
 " line, if any. That means, "[ ]" will be replaced with "[x]" and "[x]" with
 " "[ ]". If you want more or different checkbox states, you can override the
 " contents of g:checkbox_states with an array of characters, which the plugin
@@ -15,7 +15,7 @@
 "
 "     let g:checkbox_states = [' ', 'x']
 "
-" When there's no checkbox on the current line, "<leader>tt" will insert one
+" When there's no checkbox on the current line, "<leader>x" will insert one
 " at the pattern defined in g:insert_checkbox. The new checkbox's state will
 " be the first element of g:checkbox_states. The default for g:insert_checkbox
 " is '\<', which will insert the checkbox in front of the first word of the
@@ -38,24 +38,21 @@ if exists('g:loaded_checkbox')
 	finish
 endif
 
-if !exists('g:checkbox_states')
-  let g:checkbox_states = [' ', 'x']
-endif
+let g:checkbox_states = [' ', 'x']
 
-
-if !exists('g:insert_checkbox')
+"if !exists('g:insert_checkbox')
   "let g:insert_checkbox = '^'
   "let g:insert_checkbox = '$'
-  let g:insert_checkbox = '\<'
-endif
+let g:insert_checkbox = '\<'
+"endif
 
-if !exists('g:insert_checkbox_prefix')
-  let g:insert_checkbox_prefix = ''
-endif
+"if !exists('g:insert_checkbox_prefix')
+let g:insert_checkbox_prefix = ''
+"endif
 
-if !exists('g:insert_checkbox_suffix')
-  let g:insert_checkbox_suffix = ' '
-endif
+"if !exists('g:insert_checkbox_suffix')
+let g:insert_checkbox_suffix = ' '
+"endif
 
 fu! checkbox#ToggleCB()
 	let line = getline('.')
@@ -81,7 +78,5 @@ fu! checkbox#ToggleCB()
 endf
 
 command! ToggleCB call checkbox#ToggleCB()
-
-map <silent> <leader>tt :call checkbox#ToggleCB()<cr>
-
+nnoremap <silent> <leader>x :call checkbox#ToggleCB()<cr>
 let g:loaded_checkbox = 1
