@@ -78,5 +78,6 @@ fu! checkbox#ToggleCB()
 endf
 
 command! ToggleCB call checkbox#ToggleCB()
-nnoremap <silent> <leader>x :call checkbox#ToggleCB()<cr>
+" Put this is local config with mapping of your choice.
+" nnoremap <silent> <leader>x :call checkbox#ToggleCB()<cr>
 let g:loaded_checkbox = 1
