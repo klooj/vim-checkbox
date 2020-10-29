@@ -14,14 +14,14 @@ a markdown file for notes and todo lists.
 Installation
 ------------
 
-Just copy the script into your plugin folder, e.g. `~/.vim/plugin/`. If you're
-using pathogen, just clone this repository in `~/.vim/bundle`.
+Using vim-plug:
+`Plug kludgeon/vim-checkbox`, { 'for': 'markdown' }`
 
 
 Usage
 -----
 
-Press `<leader>tt` to toggle the (first) checkbox on the current
+Press `<leader>x` to toggle the (first) checkbox on the current
 line, if any. That means, `[ ]` will be replaced with `[x]` and `[x]` with
 `[ ]`. If you want more or different checkbox states, you can override the
 contents of `g:checkbox_states` with an array of characters, which the plugin
@@ -29,7 +29,7 @@ will cycle through. The default is:
 
     let g:checkbox_states = [' ', 'x']
 
-When there's no checkbox on the current line, `<leader>tt` will insert one
+When there's no checkbox on the current line, `<leader>x` will insert one
 at the pattern defined in `g:insert_checkbox`. The new checkbox's state will
 be the first element of `g:checkbox_states`. The default for `g:insert_checkbox`
 is `'\<'`, which will insert the checkbox in front of the first word of the
