@@ -38,8 +38,7 @@ if exists('g:loaded_checkbox')
 	finish
 endif
 
-let g:checkbox_states = [' ', 'x']
-
+let g:checkbox_states = [' ','◐','✗']
 "if !exists('g:insert_checkbox')
   "let g:insert_checkbox = '^'
   "let g:insert_checkbox = '$'
@@ -79,5 +78,5 @@ endf
 
 command! ToggleCB call checkbox#ToggleCB()
 " Put this is local config with mapping of your choice.
-" nnoremap <silent> <leader>x :call checkbox#ToggleCB()<cr>
+nnoremap <silent> <localleader>x :call checkbox#ToggleCB()<cr>
 let g:loaded_checkbox = 1
