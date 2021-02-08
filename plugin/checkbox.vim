@@ -57,7 +57,7 @@ let g:insert_checkbox_suffix = ' '
 
 fu! checkbox#ToggleCB()
 	let line = getline('.')
-   if(match(line, '\v\s*(\*|-|+|[1-9]\.|[Aa-Zz]\.) \[') != -1)
+   if(match(line, '\v\s*(\*|\-|\+|[1-9]\.|[Aa-Zz]\.) \[') != -1)
   " if(match(line, '\[.\]') != -1)
     let states = copy(g:checkbox_states)
     call add(states, g:checkbox_states[0])
