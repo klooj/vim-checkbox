@@ -43,7 +43,7 @@ let g:checkbox_states = [' ','◐','✗']
   "let g:insert_checkbox = '^'
   "let g:insert_checkbox = '$'
 " let g:insert_checkbox = '\<'
-let g:insert_checkbox =  '\v(^(\s*)(-|\*+|[aA-zZ]\.+|[01-99]\.+|\.+|\+)(\s+))'
+let g:insert_checkbox =  '(^(\s*)(-|\*+|[aA-zZ]\.+|[01-99]\.+|\.+|\+)(\s))'
 " '\v\s*(\*|-|\+|[1-9]\.|[aA-zZ]\.) \['
 
 " '\v(^(\s*)(-|\*+|[aA-zZ]\.+|[01-99]\.+|\.+|\+)(\s+))(.*)'
