@@ -71,6 +71,6 @@ fu! checkbox#ToggleCB()
 	call setline('.', line)
 endf
 
-command! kpCB call checkbox#ToggleCB()
+command! KJCB call checkbox#ToggleCB()
 nnoremap <silent> <leader>mx :call checkbox#ToggleCB()<cr>
 let g:loaded_checkbox = 1
