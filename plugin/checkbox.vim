@@ -42,8 +42,8 @@ let g:checkbox_states = [' ','◐','✗']
 "if !exists('g:insert_checkbox')
   "let g:insert_checkbox = '^'
   "let g:insert_checkbox = '$'
-" let g:insert_checkbox = '\<'
-let g:insert_checkbox =  '(^(\s*)(-|\*+|[aA-zZ]\.+|[01-99]\.+|\.+|\+)(\s))'
+let g:insert_checkbox = '\<'
+" let g:insert_checkbox =  '(^(\s*)(-|\*+|[aA-zZ]\.+|[01-99]\.+|\.+|\+)(\s))'
 " '\v\s*(\*|-|\+|[1-9]\.|[aA-zZ]\.) \['
 
 " '\v(^(\s*)(-|\*+|[aA-zZ]\.+|[01-99]\.+|\.+|\+)(\s+))(.*)'
@@ -82,5 +82,5 @@ endf
 
 command! ToggleCB call checkbox#ToggleCB()
 " Put this is local config with mapping of your choice.
-nnoremap <silent> <localleader>x :call checkbox#ToggleCB()<cr>
+nnoremap <silent> <leader>mx :call checkbox#ToggleCB()<cr>
 let g:loaded_checkbox = 1
