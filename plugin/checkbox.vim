@@ -39,28 +39,19 @@ if exists('g:loaded_checkbox')
 endif
 
 let g:checkbox_states = [' ','◐','✗']
-"if !exists('g:insert_checkbox')
   "let g:insert_checkbox = '^'
   "let g:insert_checkbox = '$'
 let g:insert_checkbox = '\<'
 " let g:insert_checkbox =  '(^(\s*)(-|\*+|[aA-zZ]\.+|[01-99]\.+|\.+|\+)(\s))'
 " '\v\s*(\*|-|\+|[1-9]\.|[aA-zZ]\.) \['
-
 " '\v(^(\s*)(-|\*+|[aA-zZ]\.+|[01-99]\.+|\.+|\+)(\s+))(.*)'
-"endif
 
-"if !exists('g:insert_checkbox_prefix')
 let g:insert_checkbox_prefix = ''
-"endif
-
-"if !exists('g:insert_checkbox_suffix')
 let g:insert_checkbox_suffix = ' '
-"endif
 
 fu! checkbox#ToggleCB()
 	let line = getline('.')
-   " if(match(line, '\s*(\*|\-|\+|[1-9]\.|[Aa-Zz]\.) \[') != -1)
-  if(match(line, '\[\s?\.?\s?\]') != -1)
+  if(match(line, '\[.?\]') != -1)
     let states = copy(g:checkbox_states)
     call add(states, g:checkbox_states[0])
 
@@ -80,7 +71,6 @@ fu! checkbox#ToggleCB()
 	call setline('.', line)
 endf
 
-command! ToggleCB call checkbox#ToggleCB()
-" Put this is local config with mapping of your choice.
+command! kpCB call checkbox#ToggleCB()
 nnoremap <silent> <leader>mx :call checkbox#ToggleCB()<cr>
 let g:loaded_checkbox = 1
